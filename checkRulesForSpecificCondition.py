@@ -131,5 +131,5 @@ response = getmxl3fwrules(api_key,networkid)
 
 for item in response: 
         if('specific vlan or ip address' in item['destCidr']): #Here you can check various conditions that is required for PCI-DSS rule audit 
-                print(item) #Do What you want when the condition is occured you can email the rule
+                print(item) #Do What you want when the condition is satisfied i.e. you can email the rule, push notification, send syslog etc.
 
