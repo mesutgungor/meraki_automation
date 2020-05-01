@@ -26,7 +26,9 @@ with open('rebootLogb.txt', 'w') as f:
     f.write ("%s;%s;%s;%s;%s;\n" % ("Date","NetworkID","Name","Model","PublicIP"))
     for item in orgInventory:
         if ('MX65' in item['model'] or 'MX64' in item['model'] or 'MX84' in item['model'] ):
-                #posturl = "https://api.meraki.com/api/v0/networks/"+item['networkId']+"/devices/"+item['serial']+"/reboot"
+                posturl = "https://api.meraki.com/api/v0/networks/"+item['networkId']+"/devices/"+item['serial']+"/reboot"
+                #Before you uncomment the below line to reboot devices dryrun this script and look at rebootlog.txt file
+                #to see which devices will be rebooted
                 #dashboard = requests.post(posturl, headers=headers)
                 dateTimeObj = datetime.now()
                 timestampStr = dateTimeObj.strftime("%d-%b-%Y %H:%M:%S.%f")
