@@ -22,7 +22,7 @@ with open('inventory.txt', 'w') as f:
 #en:Below code block will reboot specified model of meraki device and write log to the rebootLog.txt file
 start_time = time.time()
 counter=0
-with open('rebootLogb.txt', 'w') as f:
+with open('rebootLog.txt', 'w') as f:
     f.write ("%s;%s;%s;%s;%s;\n" % ("Date","NetworkID","Name","Model","PublicIP"))
     for item in orgInventory:
         if ('MX65' in item['model'] or 'MX64' in item['model'] or 'MX84' in item['model'] ):
@@ -41,5 +41,5 @@ hours, rem = divmod(elapsed_time, 3600)
 minutes, seconds = divmod(rem, 60)
 elapsed="{:0>2}h : {:0>2}m : {:05.2f}s".format(int(hours),int(minutes),seconds)
 print(str(elapsed_time))
-with open('rebootLogb.txt', 'a+') as f:
+with open('rebootLog.txt', 'a+') as f:
     f.write("%s Meraki Devices have been rebooted in  %s time"%(counter,elapsed))
